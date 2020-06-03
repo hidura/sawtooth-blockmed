@@ -88,8 +88,11 @@ pre_glocose
 pre_insulin  
 reactive_protein_c  
 right_arm
+
 right_thigh 
+
 tsh 
+
 uric_acid
 
 vitaminD 
