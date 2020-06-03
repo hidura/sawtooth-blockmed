@@ -1,0 +1,3 @@
+[console_scripts]
+cli = cli.workflow.dehr_cli:main_wrapper
+

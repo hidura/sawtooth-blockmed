@@ -1,0 +1,3 @@
+[console_scripts]
+healthcare-rest-api = rest_api.workflow.main:main
+

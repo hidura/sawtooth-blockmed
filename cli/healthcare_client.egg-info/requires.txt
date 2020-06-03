@@ -1,0 +1,7 @@
+colorlog
+protobuf
+sawtooth-sdk
+requests
+sawtooth-signing
+PyYAML
+sawtooth-cli

@@ -1,0 +1,130 @@
+<html lang="en" class="wf-lato-n3-active wf-lato-n4-active wf-lato-n7-active wf-lato-n9-active wf-flaticon-n4-inactive wf-fontawesome5solid-n4-active wf-fontawesome5regular-n4-active wf-fontawesome5brands-n4-active wf-simplelineicons-n4-active wf-active">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Login - Clinic History</title>
+        <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport">
+        <link rel="icon" href="{{ url_for('static', filename='assets/img/icon.ico')}}" type="image/x-icon">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='favicon/apple-touch-icon.png')}}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon/favicon-32x32.png')}}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon/favicon-16x16.png')}}">
+        <link rel="manifest" href="{{ url_for('static', filename='favicon/site.webmanifest')}}">
+        <link rel="mask-icon" href="{{ url_for('static', filename='favicon/safari-pinned-tab.svg')}}" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="theme-color" content="#ffffff">
+        <!-- Fonts and icons -->
+        <script href="{{ url_for('static', filename='assets/js/plugin/webfont/webfont.min.js')}}"></script>
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900" media="all"><link rel="stylesheet" href="../assets/css/fonts.min.css" media="all"><script>
+            WebFont.load({
+                google: {"families":["Lato:300,400,700,900"]},
+                custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['../assets/css/fonts.min.css']},
+                active: function() {
+                    sessionStorage.fonts = true;
+                }
+            });
+        </script>
+
+        <!-- CSS Files -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/atlantis.min.css')}}">
+    </head>
+    <body class="login">
+        <div class="main-panel">
+            <div class="content">
+                <div class="row" >
+                    <div class="col-md-2 col-md-offset-2"></div>
+                    <div class="col-md-5 col-md-offset-5">
+                        <div class="card ">
+                            <div class="card-title" style="text-align: center;">{{basic['title']}}</div>
+                            <div class="card-body">
+                                <form action="/register" method="post" >
+                                    <div class="container container-login animated fadeIn" style="display: block;">
+                                    <h3 class="text-center">Login</h3>
+                                    <div class="login-form">
+                                        <div class="form-group">
+                                            <label for="first_name">Names</label>
+                                            <input type="text" class="form-control" id="first_name"
+                                                   name="first_name" placeholder="Names">
+                                            <small id="emailHelp2" class="form-text text-muted">Favor colocar su cedula sin guiones, para ingresar.</small>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="last_name">Last Name</label>
+                                            <input type="text" class="form-control" id="last_name"
+                                                   name="last_name" placeholder="Last Name">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="idcard">idcard</label>
+                                            <input type="number" class="form-control" id="idcard"
+                                                   name="idcard" placeholder="IDCARD">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="idcard_type">ID Card Type</label>
+                                            <select class="form-control" id="idcard_type"
+                                                   name="idcard_type" >
+                                                <option value="-1">Select One</option>
+                                                <option value="0">RNC</option>
+                                                <option value="1">IDCARD</option>
+                                                <option value="2">PASSPORT</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="telephone">Telephone</label>
+                                            <input type="text" class="form-control" id="telephone"
+                                                   name="telephone" placeholder="Telephone">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="birthdate">Birthdate</label>
+                                            <input type="date" class="form-control" id="birthdate"
+                                                   name="birthdate" placeholder="Birthdate">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Email</label>
+                                            <input type="email" class="form-control" id="email"
+                                                   name="email" placeholder="Email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="passwd">Password</label>
+                                            <input type="password" class="form-control" id="passwd"
+                                                   name="passwd" placeholder="Password">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="idcard_type">User Type</label>
+                                            <select class="form-control" id="user_type"
+                                                   name="user_type" >
+                                                <option value="0">Select One</option>
+                                                <option value="1">Doctor</option>
+                                                <option value="2">Patient</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="idcard_type">Biological Sex</label>
+                                            <select class="form-control" id="biological_sex"
+                                                   name="biological_sex" >
+                                                <option value="0">Select One</option>
+                                                <option value="m">Male</option>
+                                                <option value="f">Female</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-action mb-3" style="text-align: center;">
+                                            <input type="submit" class="btn btn-primary btn-rounded btn-login" value="Register">
+                                        </div>
+                                    </div>
+                                </div>
+                                </form>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <script src="{{ url_for('static', filename='assets/js/core/jquery.3.2.1.min.js')}}"></script>
+        <script src="{{ url_for('static', filename='assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js')}}"></script>
+        <script src="{{ url_for('static', filename='assets/js/core/popper.min.js')}}"></script>
+        <script src="{{ url_for('static', filename='assets/js/core/bootstrap.min.js')}}"></script>
+        <script src="{{ url_for('static', filename='assets/js/atlantis.min.js')}}"></script>
+
+    </body>
+</html>

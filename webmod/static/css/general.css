@@ -1,0 +1,40 @@
+.just-print{
+    display : none;
+}
+
+@media print
+{
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+    .just-print, .just-print *
+    {
+        display: block !important;
+    }
+}
+
+
+body{
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+    text-align: left;
+    font-size: 14px;
+    line-height: 17px;
+    word-wrap: break-word;
+    text-rendering: optimizeLegibility;
+    -moz-font-feature-settings: 'liga';
+    -ms-font-feature-settings: 'liga';
+    -webkit-font-feature-settings: 'liga';
+    font-feature-settings: 'liga';
+}
+input:hover{
+    color: #4F4F4F;
+    font-style: normal;
+}
+.text-input{
+    color: #969696;
+    font-family: actor, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    padding: 6px;
+}

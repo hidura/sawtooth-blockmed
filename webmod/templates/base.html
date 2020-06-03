@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <meta charset="utf-8">
+        <title>{% block title %}{% endblock %} - MedicalPlatform</title>
+        <link href="{{ url_for('static', filename='assets/css/atlantis.min.css')}}" rel="stylesheet" type="text/css">
+        <link href="{{ url_for('static', filename='css/select2.min.css')}}" rel="stylesheet" type="text/css">
+        <link href="{{ url_for('static', filename='assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
+        <link href="{{ url_for('static', filename='font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
+        <link href="{{ url_for('static', filename='css/buttons.bootstrap.min.css')}}" rel="stylesheet" type="text/css">
+
+        <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport">
+        <link rel="icon" href="{{ url_for('static', filename='assets/img/icon.ico')}}" type="image/x-icon">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='favicon/apple-touch-icon.png')}}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon/favicon-32x32.png')}}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon/favicon-16x16.png')}}">
+        <link rel="manifest" href="{{ url_for('static', filename='favicon/site.webmanifest')}}">
+        <link rel="mask-icon" href="{{ url_for('static', filename='favicon/safari-pinned-tab.svg')}}" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="theme-color" content="#ffffff">
+        <!-- Fonts and icons -->
+        <script type="application/javascript" src="{{ url_for('static', filename='assets/js/plugin/webfont/webfont.min.js')}}"></script>
+        <script type="application/javascript" src="{{ url_for('static', filename='js/jquery-1.10.2.min.js')}}"></script>
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900" media="all">
+        <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/fonts.min.css')}}" media="all"><script>
+            WebFont.load({
+                google: {"families":["Lato:300,400,700,900"]},
+                custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['../assets/css/fonts.min.css']},
+                active: function() {
+                    sessionStorage.fonts = true;
+                }
+            });
+        </script>
+    {% endblock %}
+</head>
+<body>
+    <div class="wrapper overlay-sidebar">
+		<div class="main-header">
+			<!-- Logo Header -->
+			<div class="logo-header" data-background-color="white">
+
+				<a href="/" class="logo">
+					<img src="{{ url_for('static', filename='images/logo/logo.svg')}}" alt="navbar brand" class="navbar-brand">
+				</a>
+				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse"
+                        aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon">
+						<i class="icon-menu"></i>
+					</span>
+				</button>
+				<button class="topbar-toggler more"><i class="icon-options-vertical"></i></button>
+				<div class="nav-toggle">
+					<button class="btn btn-toggle sidenav-overlay-toggler toggled"><i class="icon-options-vertical"></i></button>
+				</div>
+			</div>
+			<!-- End Logo Header -->
+
+			<!-- Navbar Header -->
+			<nav class="navbar navbar-header navbar-expand-lg" data-background-color="white">
+
+				<div class="container-fluid">
+					<div class="collapse" id="search-nav">
+
+					</div>
+					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+						<li class="nav-item toggle-nav-search hidden-caret">
+							<a class="nav-link" data-toggle="collapse" href="#search-nav" role="button" aria-expanded="false" aria-controls="search-nav">
+								<i class="fa fa-search"></i>
+							</a>
+						</li>
+						<li class="nav-item dropdown hidden-caret">
+
+						</li>
+						<li class="nav-item dropdown hidden-caret">
+						</li>
+
+						<li class="nav-item dropdown hidden-caret">
+							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
+								<div class="avatar-sm">
+									<img src="{{ user_details.avatar}}" alt="..." class="avatar-img rounded-circle">
+								</div>
+							</a>
+							<ul class="dropdown-menu dropdown-user animated fadeIn">
+								<div class="dropdown-user-scroll scrollbar-outer">
+									<li>
+										<div class="user-box">
+											<div class="avatar-lg"><img src="{{ user_details.avatar}}" alt="image profile" class="avatar-img rounded"></div>
+											<div class="u-text">
+												<h4></h4>
+												<input id="_idcard_user" type="hidden" value="{{user_details.idcard}}">
+												<p class="text-muted"></p><a href="profile.html" class="btn btn-xs btn-secondary btn-sm">Ver perfil</a>
+											</div>
+										</div>
+									</li>
+									<li>
+
+									</li>
+								</div>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<!-- End Navbar -->
+		</div>
+
+		<!-- Sidebar -->
+		<div class="sidebar sidebar-style-2">
+			<div class="sidebar-wrapper scrollbar scrollbar-inner">
+				<div class="sidebar-content">
+					<div class="user">
+						<div class="avatar-sm float-left mr-2">
+							<img src="{{ user_details.avatar }}" alt="..." class="avatar-img rounded-circle">
+						</div>
+						<div class="info">
+							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+								<span>
+									{{ user_details.name}}
+									<span class="user-level">{{ user_details.lastname }}</span>
+									<span class="caret"></span>
+								</span>
+							</a>
+							<div class="clearfix"></div>
+
+							<div class="collapse in" id="collapseExample">
+								<ul class="nav">
+									<li>
+
+									</li>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+					<ul class="nav nav-primary">
+                        <li class='nav-item'>
+
+                        </li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- End Sidebar -->
+
+		<div>
+			{% block content %}{% endblock %}
+            {% block footer %}
+			    <footer class="footer">
+				<div class="container-fluid">
+					<nav class="pull-left">
+						<ul class="nav">
+							<li class="nav-item">
+								<a class="nav-link" href="https://www.themekita.com">
+									ThemeKita
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">
+									Help
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">
+									Licenses
+								</a>
+							</li>
+						</ul>
+					</nav>
+					<div class="copyright ml-auto">
+						2018, made with <i class="fa fa-heart heart text-danger"></i> by <a href="https://www.themekita.com">ThemeKita</a>
+					</div>
+				</div>
+			</footer>
+
+            {% endblock %}
+		</div>
+
+	</div>
+
+</body>
+</html>

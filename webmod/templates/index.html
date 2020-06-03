@@ -1,0 +1,145 @@
+{% extends "base.html" %}
+    {% block title %}{{ basic["title"] }}{% endblock %}
+    {% block head %}
+        {{ super() }}
+        <style type="text/css">
+            .important { color: #336699; }
+        </style>
+
+        <link href="{{ url_for('static', filename='assets/c3/c3.min.css')}}" rel="stylesheet">
+        <script type="text/javascript" src="{{ url_for('static', filename='assets/d3/d3/dist/d3.min.js')}}"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.5/socket.io.min.js"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='assets/c3/c3.js')}}"></script>
+
+        <link href="{{ url_for('static', filename='font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
+    {% endblock %}
+    {% block content %}
+	    <div class="main-panel">
+			<div class="content">
+				<div class="panel-header bg-primary-gradient">
+					<div class="page-inner py-5">
+						<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+							<div>
+								<h2 class="text-white pb-2 fw-bold"></h2>
+							</div>
+							<div class="ml-md-auto py-2 py-md-0">
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="page-inner mt--5">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-head-row">
+                                <div class="card-title">HealthBoard</div>
+                                <div class="card-tools">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row" id="card">
+                                <div class="col-md-6">
+
+                                    <div class="card full-height">
+                                        <div class="card-header">
+                                            <div class="card-title">Evaluaciones medicas</div>
+                                        </div>
+                                        <div class="card-body">
+                                            <ol class="activity-feed">
+                                                {{feed}}
+
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <form action="/grant_consent" method="post" >
+                                        <div class="row">
+                                                <div class="col-md-4">
+
+                                                    <div class="form-group">
+                                                        <label for="idcard_doctor">Give consent to</label>
+                                                        <input type="text" class="form-control" id="idcard_doctor"
+                                                       name="idcard_doctor" placeholder="ID Card please">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="permission">Consent Type</label>
+                                                        <select class="form-control" id="permission"
+                                                               name="permission" >
+                                                            <option value="0">Select One</option>
+                                                            <option value="read">Read</option>
+                                                            <option value="write">Write</option>
+                                                            <option value="read_write">Read & Write</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+												<input name="idcard_patient" type="hidden" value="{{user_details.idcard}}">
+                                                <input type="hidden" name="time_exp" value="45"/>
+                                                <div class="form-group"><br/>
+                                                    <button class="btn btn-primary btn-round">Grant consent</button>
+                                                </div>
+                                            </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+				</div>
+			</div>
+            <!-- Modal -->
+		</div>
+
+        <!--   Core JS Files   -->
+        <script type="text/javascript" src="{{ url_for('static', filename='assets/js/core/jquery.3.2.1.min.js')}}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='assets/js/core/popper.min.js')}}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='assets/js/core/bootstrap.min.js')}}"></script>
+
+        <!-- jQuery UI -->
+        <script type="text/javascript" src="{{ url_for('static', filename='assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js')}}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js')}}"></script>
+
+        <!-- jQuery Scrollbar -->
+        <script type="text/javascript" src="{{ url_for('static', filename='assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js')}}"></script>
+
+
+        <!-- Chart JS -->
+        <script type="text/javascript" src="{{ url_for('static', filename='assets/js/plugin/chart.js/chart.min.js')}}"></script>
+
+        <!-- jQuery Sparkline -->
+        <script type="text/javascript" src="{{ url_for('static', filename='assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js')}}"></script>
+
+        <!-- Chart Circle -->
+        <script type="text/javascript" src="{{ url_for('static', filename='assets/js/plugin/chart-circle/circles.min.js')}}"></script>
+
+        <!-- Datatables -->
+        <script type="text/javascript" src="{{ url_for('static', filename='assets/js/plugin/datatables/datatables.min.js')}}"></script>
+
+        <!-- Bootstrap Notify -->
+        <script type="text/javascript" src="{{ url_for('static', filename='assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
+
+        <!-- jQuery Vector Maps -->
+        <script type="text/javascript" src="{{ url_for('static', filename='assets/js/plugin/jqvmap/jquery.vmap.min.js')}}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='assets/js/plugin/jqvmap/maps/jquery.vmap.world.js')}}"></script>
+
+        <!-- Sweet Alert -->
+        <script type="text/javascript" src="{{ url_for('static', filename='assets/js/plugin/sweetalert/sweetalert.min.js')}}"></script>
+
+        <!-- Atlantis JS -->
+        <script type="text/javascript" src="{{ url_for('static', filename='assets/js/plugin/webfont/webfont.min.js')}}"></script>
+
+        <script type="text/javascript" src="{{ url_for('static', filename='assets/js/atlantis.min.js')}}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/libs/select2.full.min.js')}}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/libs/pdfmake.min.js')}}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/libs/vfs_fonts.js')}}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='assets/bootbox/bootbox.js')}}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/moment.js')}}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/app.js')}}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/index.js')}}"></script>
+
+    {% endblock %}

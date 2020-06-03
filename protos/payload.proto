@@ -1,0 +1,374 @@
+syntax = "proto3";
+
+message TransactionPayload {
+
+    enum PayloadType {
+        TYPE_UNSET = 0;
+        CREATE_CLINIC = 1;
+        CREATE_DOCTOR = 2;
+        CREATE_PATIENT = 3;
+        CREATE_CLAIM = 4;
+        ASSIGN_DOCTOR = 5;
+        FIRST_VISIT = 6;
+        PASS_TESTS = 7;
+        ATTEND_PROCEDURES = 8;
+        EAT_PILLS = 9;
+        NEXT_VISIT = 10;
+        ADD_LAB_TEST = 11;
+        ADD_PULSE = 12;
+        CREATE_LAB = 13;
+        UPDATE_CLAIM = 14;
+        CLOSE_CLAIM = 15;
+
+        CREATE_PARTY = 18;
+        UPDATE_PARTY = 19;
+        CREATE_DOCTORINSTITUTIONS = 16;
+        UPDATE_DOCTORINSTITUTIONS = 20;
+        CREATE_EVALUATION = 17;
+        UPDATE_EVALUATION = 21;
+        CREATE_RECORDOWNER = 22;
+        UPDATE_RECORDOWNER = 23;
+        CREATE_CONSENT = 24;
+    }
+
+    PayloadType payload_type = 1;
+
+    Clinic create_clinic = 2;
+
+    CreateDoctor create_doctor = 3;
+    CreatePatient create_patient = 4;
+    Evaluation create_evaluation = 5;
+    Evaluation update_evaluation = 6;
+    ActionOnClaim assign_doctor = 7;
+    ActionOnClaim first_visit = 8;
+    ActionOnClaim pass_tests = 9;
+    ActionOnClaim attend_procedures = 10;
+    ActionOnClaim eat_pills = 11;
+    ActionOnClaim next_visit = 12;
+    AddLabTest lab_test = 13;
+    CreateLab create_lab = 14;
+    Claim close_claim = 15;
+    Claim create_claim = 18;
+    Claim update_claim = 16;
+    DoctorInstitutions create_doctorinstitution = 17;
+    DoctorInstitutions update_doctorinstitution = 19;
+    Party create_party = 20;
+    Party update_party = 21;
+    Clinic update_clinic = 22;
+    CreateDoctor update_doctor = 23;
+    CreatePatient update_patient = 24;
+    RecordOwner create_record = 25;
+    RecordOwner update_record = 26;
+    ConsentDocPat create_consent = 27;
+}
+
+message Party {
+    enum idcardtype {
+        RNC = 0;
+        IDCARD = 1;
+        PASSPORT = 2;
+    }
+    string public_key = 1;
+    string name = 2;
+    string lastname =3;
+    string telephone = 4;
+    string birthdate = 5;
+    string idcard = 6;
+    idcardtype idcard_type = 7;
+}
+
+
+message Clinic {
+    string party_key = 1;
+    string name = 2;
+    string speciality=3;
+    string public_level=4;
+    float latitude=5;
+    float longitude=6;
+    bool heliport=9;
+    bool operating_room=10;
+    string picture=11;
+    bool teaching=12;
+    bool trauma_center=13;
+    string trauma_level=14;
+//    repeated Permission permissions = 2;
+}
+
+message CreateDoctor {
+    string party_key = 1;
+    string doctor_key = 2;
+    string main_speciality = 3;
+    string bio = 4;
+    string photo=5;
+    string biological_sex=6;
+}
+
+message DoctorInstitutions {
+    string party_key_doctor = 1;
+    string party_key_institution = 2;
+    string scheldule = 3;
+}
+
+message CreatePatient {
+
+    string party_key = 1;
+    string biological_sex = 2;
+    string blood_type = 3;
+    string critical_info = 4;
+    string current_insurance = 5;
+    string disability_kind = 6;
+    string disabled_person = 7;
+    string familiar_antecedents = 8;
+    string general_info = 9;
+    map<string, string> history_information = 10;
+    string alcohol =11;
+    string anticonceptive=12;
+    string car_child_safety=13;
+    string car_revision=14;
+    string car_seat_belt=15;
+    string coffee=16;
+    string diet = 17;
+    string drug_iv =18;
+    string drug_usage =19;
+    string eats_alone =20;
+    string ex_alcoholic =21;
+    string ex_drug_addict =22;
+    string ex_smoker = 23;
+    string exercise =24;
+    string helmet = 25;
+    string home_safety =26;
+    string motorcycle_rider = 27;
+    string prostitute = 28;
+    string salt = 29;
+    string second_hand_smoker = 30;
+    string smoking = 31;
+    string soft_drinks = 32;
+    string traffic_laws = 33;
+    string photo = 34;
+    string record_id=35;
+}
+message Evaluation{
+    string patient_key = 1;
+    string doctor_key=6;
+    string abdominal_circ = 2;
+    string abstraction = 3;
+    string bmi = 4;
+    string bpm = 5;
+    string chief_complaint = 7;
+    string cholesterol_total = 8;
+    string dehydration = 9;
+    string derived_from = 10;
+    string derived_to = 11;
+    string diagnosis = 12;
+    string diastolic = 13;
+    string directions = 14;
+    string discharge_reason = 15;
+    string evaluation_endtime = 16;
+    string evaluation_start = 17;
+    string evaluation_summary = 18;
+    string evaluation_type = 19;
+    string fat_percentage = 20;
+    string glycemia = 21;
+    string hba1c = 22;
+    string hdl = 23;
+    string head_circumference = 24;
+    string healthprof = 25;
+    string height = 26;
+    string hip = 27;
+    string info_diagnosis = 28;
+    string information_source = 29;
+    string institution = 30;
+    string judgment = 31;
+    string knowledge_current_events = 32;
+    string ldl = 33;
+    string loc = 34;
+    string loc_eyes = 35;
+    string loc_motor = 36;
+    string loc_verbal = 37;
+    string malnutrition = 38;
+    string memory = 39;
+    string mood =40;
+    string next_evaluation = 41;
+    string notes = 42;
+    string notes_complaint = 43;
+    string object_recognition  = 44;
+    string orientation  = 45;
+    string osat  = 46;
+    string patient  = 47;
+    string praxis  = 48;
+    string present_illness  = 49;
+    string related_condition  = 50;
+    string reliable_info  = 51;
+    string respiratory_rate  = 52;
+    string signed_by  = 53;
+    string specialty = 54;
+    string state = 55;
+    string systolic = 56;
+    string tag = 57;
+    string temperature = 58;
+    string tremor = 59;
+    string urgency  = 60;
+    string user_id  = 61;
+    string violent  = 62;
+    string visit_type  = 63;
+    string vocabulary  = 64;
+    string weight  = 65;
+    string whr  = 66;
+    string ggt  = 67;
+    string homocysteine  = 68;
+    string left_arm  = 69;
+    string left_thigh  = 70;
+    string level_fat_visc  = 71;
+    string metabolic_rate  = 72;
+    string mg  = 73;
+    string muscle_mass  = 74;
+    string pos_glocose  = 75;
+    string pos_insulin  = 76;
+    string pre_glocose  = 77;
+    string pre_insulin  = 78;
+    string reactive_protein_c  = 79;
+    string right_arm = 80;
+    string right_thigh = 81;
+    string tsh = 82;
+    string uric_acid = 83;
+    string vitaminD3 = 84;
+    string calculation_ability = 85;
+    string record_id = 86;
+    string date_time = 87;
+    string doctor_name = 88;
+}
+
+message RecordOwner{
+    //This is the record owner, it will have store all the records information
+    //Associated with the owner that belongs it
+    string record_id=1;//A concatenation of the party key and the record entity code
+    string owner=2;
+    repeated string records=3;
+    map<string, string> consent=4;// Map or Dictionary that is fill with the last consent aviable for the public_key
+}
+message CreateLab {
+    string party_key = 1;
+    string name = 2;
+    string speciality = 3;
+}
+
+message AddLabTest {
+    string height=1;
+    string weight=2;
+    string gender=3;
+    string a_g_ratio=4;
+    string albumin=5;
+    string alkaline_phosphatase=6;
+    string appearance=7;
+    string bilirubin=8;
+    string casts=9;
+    string color=10;
+    string event_time=11;
+    string id=12;
+    string client_pkey=13;
+}
+
+message AddLabTestWithUser {
+    string height=1;
+    string weight=2;
+    string gender=3;
+    string a_g_ratio=4;
+    string albumin=5;
+    string alkaline_phosphatase=6;
+    string appearance=7;
+    string bilirubin=8;
+    string casts=9;
+    string color=10;
+    string event_time=11;
+    string id=12;
+    string client_pkey=13;
+    string name=14;
+    string surname=15;
+}
+
+message AddPulse {
+//    string public_key=1;
+    string id=1;
+    string pulse=2;
+    string timestamp=3;
+    string client_pkey=4;
+}
+
+message AddPulseWithUser {
+//    string public_key=1;
+    string id=1;
+    string pulse=2;
+    string timestamp=3;
+    string client_pkey=4;
+    string name=5;
+    string surname=6;
+}
+
+message CreateClaim {
+    string claim_id = 1;
+    string clinic_pkey = 2;
+    string patient_pkey = 3;
+}
+
+message Claim {
+
+    enum State {
+        OPENED = 0;
+        CLOSED = 1;
+    }
+
+    string id = 1;
+    string client_pkey = 2;
+    string description = 3;
+    string provided_service = 4;
+    State state = 5;
+    string contract_id = 6;
+}
+
+message ClaimWithUser {
+
+    enum State {
+        OPENED = 0;
+        CLOSED = 1;
+    }
+
+    string id = 1;
+    string client_pkey = 2;
+    string description = 3;
+    string provided_service = 4;
+    State state = 5;
+    string contract_id = 6;
+    string name = 7;
+    string surname = 8;
+}
+
+message ActionOnClaim {
+    enum Event {
+        ASSIGN = 0;
+        FIRST_VISIT = 1;
+        PASS_TEST = 2;
+        PASS_PROCEDURE = 3;
+        EAT_PILLS = 4;
+        NEXT_VISIT = 5;
+    }
+
+    string claim_id = 1;
+    string clinic_pkey = 2;
+    string description = 3;
+    Event event = 4;
+    string event_time = 5;
+}
+enum permission_type {
+        READ = 0;
+        WRITE = 1;
+        READ_WRITE = 2;
+    }
+message ConsentDocPat{
+
+    string permission=1;
+    string consent_id=2;
+    string patient_key=3;
+    string doctor_key=4;
+    string expire_date=5;
+}
+

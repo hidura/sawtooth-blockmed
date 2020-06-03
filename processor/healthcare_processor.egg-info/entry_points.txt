@@ -1,0 +1,3 @@
+[console_scripts]
+healthcare-tp = processor.workflow.main:main
+

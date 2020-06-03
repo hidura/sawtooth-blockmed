@@ -1,0 +1,77 @@
+<html lang="en" class="wf-lato-n3-active wf-lato-n4-active wf-lato-n7-active wf-lato-n9-active wf-flaticon-n4-inactive wf-fontawesome5solid-n4-active wf-fontawesome5regular-n4-active wf-fontawesome5brands-n4-active wf-simplelineicons-n4-active wf-active"><head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Login - Clinic History</title>
+	<meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport">
+	<link rel="icon" href="{{ url_for('static', filename='assets/img/icon.ico')}}" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='favicon/apple-touch-icon.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon/favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon/favicon-16x16.png')}}">
+    <link rel="manifest" href="{{ url_for('static', filename='favicon/site.webmanifest')}}">
+    <link rel="mask-icon" href="{{ url_for('static', filename='favicon/safari-pinned-tab.svg')}}" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+	<!-- Fonts and icons -->
+	<script href="{{ url_for('static', filename='assets/js/plugin/webfont/webfont.min.js')}}"></script>
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900" media="all"><link rel="stylesheet" href="../assets/css/fonts.min.css" media="all"><script>
+		WebFont.load({
+			google: {"families":["Lato:300,400,700,900"]},
+			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['../assets/css/fonts.min.css']},
+			active: function() {
+				sessionStorage.fonts = true;
+			}
+		});
+	</script>
+
+	<!-- CSS Files -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/bootstrap.min.css')}}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/atlantis.min.css')}}">
+</head>
+<body class="login">
+    <div class="main-panel">
+        <div class="content">
+            <div class="row" >
+                <div class="col-md-2 col-md-offset-2"></div>
+                <div class="col-md-5 col-md-offset-5">
+                    <div class="card ">
+                        <div class="card-title" style="text-align: center;">{{basic['title']}}</div>
+                        <div class="card-body">
+                            <form action="/login" method="post" >
+                                <div class="container container-login animated fadeIn" style="display: block;">
+                                <h3 class="text-center">Login</h3>
+                                <div class="login-form">
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" class="form-control" id="email"
+                                               name="email" placeholder="Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="passwd">Password</label>
+                                        <input type="password" class="form-control" id="passwd"
+                                               name="passwd" placeholder="Password">
+                                    </div>
+                                    <div style="text-align: center;">
+                                        <span class="msg">If you're not register, please click aqui</span>
+                                        <a href="/register" id="show-signup" class="link">Register here</a>
+                                    </div>
+                                    <div class="form-action mb-3" style="text-align: center;">
+                                        <input type="submit" class="btn btn-primary btn-rounded btn-login" value="Log In">
+                                    </div>
+                                </div>
+                            </div>
+                            </form>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+	<script src="{{ url_for('static', filename='assets/js/core/jquery.3.2.1.min.js')}}"></script>
+	<script src="{{ url_for('static', filename='assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js')}}"></script>
+	<script src="{{ url_for('static', filename='assets/js/core/popper.min.js')}}"></script>
+	<script src="{{ url_for('static', filename='assets/js/core/bootstrap.min.js')}}"></script>
+	<script src="{{ url_for('static', filename='assets/js/atlantis.min.js')}}"></script>
+
+</body></html>

@@ -1,0 +1,6 @@
+colorlog
+protobuf
+sawtooth-sdk
+sawtooth-signing
+sanic
+sanic_cors

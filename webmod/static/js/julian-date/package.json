@@ -1,0 +1,91 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "julian-date",
+        "scope": null,
+        "escapedName": "julian-date",
+        "name": "julian-date",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "C:\\Users\\hidura\\Dropbox\\Sugelico-Main\\ERPTA\\resources\\site"
+    ]
+  ],
+  "_from": "julian-date@latest",
+  "_id": "julian-date@1.0.1",
+  "_inCache": true,
+  "_location": "/julian-date",
+  "_npmUser": {
+    "name": "jonhester",
+    "email": "jon.d.hester@gmail.com"
+  },
+  "_npmVersion": "1.4.28",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "julian-date",
+    "scope": null,
+    "escapedName": "julian-date",
+    "name": "julian-date",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/julian-date/-/julian-date-1.0.1.tgz",
+  "_shasum": "652189c45a062d227f91d669f05d07ba180b3e4b",
+  "_shrinkwrap": null,
+  "_spec": "julian-date",
+  "_where": "C:\\Users\\hidura\\Dropbox\\Sugelico-Main\\ERPTA\\resources\\site",
+  "author": {
+    "name": "Jon Hester"
+  },
+  "bugs": {
+    "url": "https://github.com/jonhester/julian-date/issues"
+  },
+  "dependencies": {},
+  "description": "Convert javascript dates to julian dates and days",
+  "devDependencies": {
+    "browserify": "^9.0.3",
+    "eslint": "^0.16.0",
+    "mocha": "^2.2.0",
+    "uglify-js": "^2.4.16"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "652189c45a062d227f91d669f05d07ba180b3e4b",
+    "tarball": "https://registry.npmjs.org/julian-date/-/julian-date-1.0.1.tgz"
+  },
+  "gitHead": "dd3d918fbb4d7876f38132c52434b0adfc0a9ca2",
+  "homepage": "https://github.com/jonhester/julian-date",
+  "keywords": [
+    "julian",
+    "date",
+    "gregorian",
+    "convert"
+  ],
+  "license": "MIT",
+  "main": "./lib/julian.js",
+  "maintainers": [
+    {
+      "name": "jonhester",
+      "email": "jon.d.hester@gmail.com"
+    }
+  ],
+  "name": "julian-date",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonhester/julian-date.git"
+  },
+  "scripts": {
+    "build": "browserify index.js | uglifyjs > ./dist/julianDate.min.js",
+    "lint": "eslint lib",
+    "test": "mocha"
+  },
+  "version": "1.0.1"
+}

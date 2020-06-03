@@ -1,0 +1,91 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "fontawesome",
+        "scope": null,
+        "escapedName": "fontawesome",
+        "name": "fontawesome",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "C:\\Users\\hidura\\Dropbox\\Sugelico-Main\\ERPTA\\resources\\site"
+    ]
+  ],
+  "_from": "fontawesome@latest",
+  "_id": "fontawesome@4.7.2",
+  "_inCache": true,
+  "_location": "/fontawesome",
+  "_nodeVersion": "6.9.5",
+  "_npmOperationalInternal": {
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/fontawesome-4.7.2.tgz_1487764527825_0.6713124366942793"
+  },
+  "_npmUser": {
+    "name": "momar",
+    "email": "git@mo-mar.de"
+  },
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "fontawesome",
+    "scope": null,
+    "escapedName": "fontawesome",
+    "name": "fontawesome",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/fontawesome/-/fontawesome-4.7.2.tgz",
+  "_shasum": "7f0c72ac7a6b029d3375bacb23522d9acfc50a52",
+  "_shrinkwrap": null,
+  "_spec": "fontawesome",
+  "_where": "C:\\Users\\hidura\\Dropbox\\Sugelico-Main\\ERPTA\\resources\\site",
+  "author": {
+    "name": "Moritz Marquardt"
+  },
+  "bugs": {
+    "url": "https://github.com/moqmar/node-fontawesome/issues"
+  },
+  "dependencies": {},
+  "description": "Get the Font Awesome unicode character by the icon name.",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "7f0c72ac7a6b029d3375bacb23522d9acfc50a52",
+    "tarball": "https://registry.npmjs.org/fontawesome/-/fontawesome-4.7.2.tgz"
+  },
+  "gitHead": "7ccb10079f9e97d200124ede19aadb26869c5f49",
+  "homepage": "https://github.com/moqmar/node-fontawesome#readme",
+  "keywords": [
+    "fontawesome",
+    "unicode",
+    "icons",
+    "icon",
+    "utf",
+    "character",
+    "font",
+    "awesome"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "momar",
+      "email": "git@mo-mar.de"
+    }
+  ],
+  "name": "fontawesome",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moqmar/node-fontawesome.git"
+  },
+  "scripts": {},
+  "version": "4.7.2"
+}

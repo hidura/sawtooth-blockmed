@@ -1,0 +1,8 @@
+
+{
+  "postgres": "postgresql+pypostgresql://healthcare:healthcare@database_sys/healthcare",
+  "secret_key": "7ad28dac9b8400d820fc08929fbe08a0581327c4",
+  "mail": {"host": "","username": "",
+    "port": 465, "password": "", "mail": "","ssl": "True"}
+
+}
